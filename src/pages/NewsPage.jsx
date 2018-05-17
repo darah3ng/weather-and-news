@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import Nevbar from '../components/Nevbar';
 import Footer from '../components/Footer';
 import Jumbotron from '../components/Jumbotron';
-import Articles from '../components/Article';
+import ArticleFeed from '../components/Article';
 
-class Home extends Component{
+class NewsPage extends Component{
     render() {
         return (
             <div>
                 <Nevbar/>
                 <Jumbotron title="Welcome" subtitle="Top news from hackernews" />
                 <div className="container">
-                    <Articles />
+                    <ArticleFeed />
                 </div>
                 <Footer/>
             </div>
@@ -19,14 +19,4 @@ class Home extends Component{
     }
 }
 
-// class Home extends Component{
-//     render() {
-//         return (
-//
-//                 <Articles />
-//
-//         );
-//     }
-// }
-
-export default Home;
+export default NewsPage;

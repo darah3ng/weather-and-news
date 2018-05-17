@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './styles.css';
 
 function Failure() {
     return (
-      <div className={styles.failure}>
+      <div className="container">
           Failed to load the articles...
       </div>
     );

@@ -4,26 +4,6 @@ import GetArticles from 'hacker-news-top-list';
 import Loading from './Loading';
 import Failure from './Failure';
 
-/* NOT WORKING */
-// import style from './Article.css';
-// function Article(props){
-//     return (
-//         <div className={style.article}>
-//             <h3 className={style.title}>
-//                 {props.title}
-//             </h3>
-//             <p className={style.by}>
-//                 by {props.by}
-//             </p>
-//             <div>
-//                 <a className={style.url} href={props.url}>
-//                     {props.url}
-//                 </a>
-//             </div>
-//         </div>
-//     );
-// }
-
 function Article(props){
     return (
         <div className="article">
@@ -42,7 +22,7 @@ function Article(props){
     );
 }
 
-function ArticlesFeed({ articles }) {
+function Articles({ articles }) {
     return (
         <div>
             {articles.map(article =>
@@ -57,7 +37,7 @@ function ArticlesFeed({ articles }) {
     );
 }
 
-class Articles extends Component {
+class ArticleFeed extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -78,7 +58,7 @@ class Articles extends Component {
         switch (this.state.request){
             case 'SUCCESS':
                 return (
-                    <ArticlesFeed articles={this.state.articles} />
+                    <Articles articles={this.state.articles} />
                 );
             case 'LOADING':
                 return <Loading />;
@@ -89,4 +69,4 @@ class Articles extends Component {
     }
 }
 
-export default Articles;
+export default ArticleFeed;
