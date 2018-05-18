@@ -13,7 +13,6 @@ class NewsPage extends Component{
                 <div className="container">
                     <WeatherTable />
                 </div>
-                <Footer/>
             </div>
         );
     }

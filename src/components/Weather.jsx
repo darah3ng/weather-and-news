@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Moment from 'moment';
+import Axios from 'axios';
+import WeatherAnimation from './WeatherAnimation';
 
 const ApiKey = "bbf172d5e61267c5082dcae10b6194cd";
-const ApiRequest = `http://api.openweathermap.org/data/2.5/forecast/daily?APPID=${ApiKey}&q=brisbane&mode=json&units=metric&cnt=7`;
+const ApiRequest = `https://api.openweathermap.org/data/2.5/forecast/daily?APPID=${ApiKey}&q=brisbane&mode=json&units=metric&cnt=7`;
 
 
 function TableHead({ date }) {
@@ -14,11 +16,12 @@ function TableHead({ date }) {
 
 function TableRow({ weatherInfo }) {
     return (
-      <td>{ weatherInfo }</td>
+      <td>{ weatherInfo+ ' °C'}</td>
     );
 }
 
 function Weathers({ weathers }){
+    console.log(weathers[0].weather[0].main);
     return(
         <table className="table table-bordered table-dark">
             <thead>
@@ -69,8 +72,8 @@ class WeatherFeed extends Component {
     }
 
     componentDidMount(){
-        fetch(ApiRequest)
-            .then(response => response.json())
+        Axios.get(ApiRequest)
+            .then(response => response.data)
             .then(data => this.setState({ weather: data, isLoading: false }))
     }
 
@@ -80,7 +83,19 @@ class WeatherFeed extends Component {
             return (<p>Loading...</p>);
         }
         return (
-            <Weathers weathers={this.state.weather.list} />
+            <div>
+                <div className="row">
+                    <div className="col-2">
+                        <WeatherAnimation weatherCondition={this.state.weather.list[0].weather[0].main} />
+                    </div>
+                    <div className="col-sm">
+                        <h2>{this.state.weather.list[0].weather[0].description} today!</h2>
+                    </div>
+                </div>
+                <div className="row">
+                    <Weathers weathers={this.state.weather.list} />
+                </div>
+            </div>
         );
     }
 }

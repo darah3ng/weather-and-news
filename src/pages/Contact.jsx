@@ -19,7 +19,6 @@ class Contact extends Component{
                         Dank
                     </p>
                 </div>
-                <Footer/>
             </div>
         );
     }
