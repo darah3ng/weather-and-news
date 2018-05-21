@@ -6,6 +6,7 @@ import Weather from './pages/WeatherPage';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+import './App.css';
 
 class App extends Component {
   render() {

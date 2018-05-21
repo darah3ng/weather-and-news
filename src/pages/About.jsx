@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nevbar from '../components/Nevbar';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import Jumbotron from '../components/Jumbotron';
 
 class About extends Component{

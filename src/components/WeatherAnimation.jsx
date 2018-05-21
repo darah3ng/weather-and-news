@@ -7,7 +7,8 @@ var openWeather = {
   snow: 'SNOW',
   rain: 'RAIN',
   drizzle: 'RAIN',
-  thunderstorm: 'RAIN'
+  thunderstorm: 'RAIN',
+  clouds: 'CLOUDY'
 };
 
 const defaults = {
@@ -37,9 +38,6 @@ function OutputAnimation(props) {
             );
         }
     }
-    return (
-      <div>Hello!</div>
-    );
 }
 
 export default OutputAnimation;
