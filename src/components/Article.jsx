@@ -86,7 +86,7 @@ class ArticleFeed extends Component {
             this.setState({ filterArticles: filterArticle });
         }
         if(event.target.value.length === 0){
-            this.componentWillMount();
+            this.setState({filterArticles: this.state.articles})
         }
     }
 
