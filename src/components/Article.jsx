@@ -80,9 +80,13 @@ class ArticleFeed extends Component {
         this.setState({ articleTitle: event.target.value });
         if(event.target.value){
             const filterArticle = this.state.articles.filter(function (article) {
-                return (article.title.toString().toLowerCase().trim().match(event.target.value.toString().toLowerCase()) || article.title.toString().trim().toLowerCase().indexOf(event.target.value.toString().toLowerCase()) >= 0)
+                return (article.title.toString().toLowerCase().trim().match(event.target.value.toString().toLowerCase().trim())
+                    || article.title.toString().trim().toLowerCase().indexOf(event.target.value.toString().toLowerCase().trim()) >= 0)
             });
             this.setState({ filterArticles: filterArticle });
+        }
+        if(event.target.value.length === 0){
+            this.componentWillMount();
         }
     }
 
