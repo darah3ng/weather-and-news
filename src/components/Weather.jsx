@@ -84,7 +84,6 @@ class WeatherFeed extends Component {
             .then(response => response.data)
             .then(data => this.setState({ weather: data, isLoading: false, error: false }))
             .catch(() => this.setState({error: true}))
-            // .then(data => console.log(data));
     }
 
     render() {
@@ -100,6 +99,7 @@ class WeatherFeed extends Component {
                 <div>
                     <Form getWeather={this.GetWeather} />
                     <p><span id="error_warning">Please try again! :(</span></p>
+                    <p><span id="error_warning">Ex: Brisbane AU or Brisbane Australia</span></p>
                 </div>
             );
         }
@@ -107,7 +107,9 @@ class WeatherFeed extends Component {
         return (
             <div>
                 <div className="row">
-                    <Form getWeather={this.GetWeather} />
+                    <div className="col">
+                        <Form getWeather={this.GetWeather} />
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-5">
@@ -118,7 +120,9 @@ class WeatherFeed extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <Weathers weathers={this.state.weather.list} />
+                    <div className="col">
+                        <Weathers weathers={this.state.weather.list} />
+                    </div>
                 </div>
             </div>
         );

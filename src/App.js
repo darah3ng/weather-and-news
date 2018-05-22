@@ -5,6 +5,7 @@ import NewsPage from './pages/NewsPage';
 import Weather from './pages/WeatherPage';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Meme from './pages/Meme';
 
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
                 <Route exact path="/weather" component={Weather} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
+                <Route exact path="/meme" component={Meme} />
             </Switch>
         </BrowserRouter>
     );
