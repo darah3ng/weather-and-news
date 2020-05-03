@@ -5,8 +5,7 @@ import Form from './Form';
 import WeatherAnimation from './WeatherAnimation';
 import './Weather.css';
 
-const API_KEY = "bbf172d5e61267c5082dcae10b6194cd";
-
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 function TableHead({ date }) {
     const convertDate = Moment.unix(date).format('dddd');
