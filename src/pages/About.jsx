@@ -8,7 +8,7 @@ class About extends Component{
         return (
             <div>
                 <Nevbar/>
-                <Jumbotron title="About" subtitle="The about is here!" />
+                <Jumbotron title="About" subtitle="About me page" />
                 <div className="container">
                     <h2>About</h2>
                     <p>

@@ -9,7 +9,7 @@ class Contact extends Component{
         return (
             <div>
                 <Nevbar/>
-                <Jumbotron title="Contact" subtitle="The Dank is here!" />
+                <Jumbotron title="Contact" subtitle="Contact me page" />
                 <div className="container">
                     <h2>Contact</h2>
                     <p>
